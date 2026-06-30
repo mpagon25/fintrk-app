@@ -1,0 +1,35 @@
+flowchart TD
+    A[Splash Screen] --> B[AuthStack]
+    B -.->|placeholder, not functional in Phase 1| C[Login]
+    B -.-> D[Register]
+    B -.-> E[Forgot Password]
+    B --> F[MainTabNavigator]
+    C -.-> F
+
+    F --> G[HomeStack]
+    F --> H[SheetsStack]
+    F --> I[ProfileStack]
+
+    G --> G1[Dashboard]
+    G1 --> G1a[Overview Cards: Balance, Income, Expenses]
+    G1 --> G1b[FAB: New Transaction]
+
+    H --> H0["SheetList (auto-redirect to default sheet in MVP)"]
+    H0 --> H1[SheetDetail]
+    H1 --> H1a[Header: Name, Description]
+    H1 --> H1b[Overview: Balance, Forecast]
+    H1 --> H1c[Transactions]
+    H1c --> H1c1[One-time Transaction]
+    H1c --> H1c2["Recurring Transaction (frequency: weekly/monthly/quarterly/yearly)"]
+    H1 --> H1d[History]
+    H1 --> H1e[FAB to TransactionCreate modal]
+
+    I --> I1[ProfileHome]
+    I1 --> I1a[Account]
+    I1 --> I1b[Settings]
+    I1 --> I1c[Logout]
+
+    classDef placeholder stroke-dasharray: 5 5
+    class B,C,D,E placeholder
+    classDef structural stroke-dasharray: 2 2,fill:#f5f5f5
+    class H0 structural

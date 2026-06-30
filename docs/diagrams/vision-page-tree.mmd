@@ -1,0 +1,36 @@
+flowchart TD
+    A[Splash Screen] --> B[AuthStack]
+    B --> C[Login]
+    B --> D[Register]
+    B --> E[Forgot Password]
+    B --> F[MainTabNavigator]
+    C --> F
+
+    F --> G[HomeStack]
+    F --> H[SheetsStack]
+    F --> I[ProfileStack]
+
+    G --> G1[Dashboard]
+    G1 --> G1a[Overview Cards: Total Net Worth across all Sheets]
+    G1 --> G1b[Sheet Cards Overview]
+    G1 --> G1c[FAB: New Transaction]
+
+    H --> H1[SheetList - e.g. Personal, Shared Flat, Club]
+    H --> H2[Create New Sheet]
+    H --> H3[SheetDetail]
+
+    H3 --> J1[Header: Name, Description, Settings]
+    H3 --> J2[Overview: Balance, Graph]
+    H3 --> J3[Transactions]
+    J3 --> K1[One-time Income/Expense]
+    J3 --> K2["Recurring Transaction (frequency: weekly/monthly/quarterly/yearly/custom)"]
+    H3 --> J4[History]
+    H3 --> J5[Sheet Settings]
+    H3 --> J6[FAB: New Transaction]
+
+    I --> I1[ProfileHome]
+    I1 --> I1a[Account]
+    I1 --> I1b[Settings]
+    I1 --> I1c[Currency]
+    I1 --> I1d[Language]
+    I1 --> I1e[Logout]
